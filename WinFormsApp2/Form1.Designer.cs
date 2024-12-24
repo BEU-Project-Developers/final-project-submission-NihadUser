@@ -47,7 +47,6 @@ namespace WinFormsApp2
             textBox1.PlaceholderText = "Enter your username";
             textBox1.Size = new System.Drawing.Size(267, 32);
             textBox1.TabIndex = 0;
-            //textBox1.TextChanged += textBox1_TextChanged;
             // 
             // pictureBox1
             // 
@@ -63,7 +62,8 @@ namespace WinFormsApp2
             // 
             // loginBtn
             // 
-            loginBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            loginBtn.BackColor = System.Drawing.Color.LightGray;
+            loginBtn.BackgroundImage = Properties.Resources.Screenshot_2024_12_04_003700;
             loginBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             loginBtn.FlatAppearance.BorderColor = System.Drawing.Color.DarkKhaki;
             loginBtn.FlatAppearance.BorderSize = 0;

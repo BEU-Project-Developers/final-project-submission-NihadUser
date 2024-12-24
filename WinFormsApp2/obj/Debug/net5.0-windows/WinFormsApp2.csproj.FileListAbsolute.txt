@@ -90,3 +90,7 @@ C:\Users\ASUS\OneDrive\Desktop\c-sarp-main\WinFormsApp2\obj\Debug\net5.0-windows
 C:\Users\ASUS\OneDrive\Desktop\c-sarp-main\WinFormsApp2\obj\Debug\net5.0-windows\refint\WinFormsApp2.dll
 C:\Users\ASUS\OneDrive\Desktop\c-sarp-main\WinFormsApp2\obj\Debug\net5.0-windows\WinFormsApp2.genruntimeconfig.cache
 C:\Users\ASUS\OneDrive\Desktop\c-sarp-main\WinFormsApp2\obj\Debug\net5.0-windows\ref\WinFormsApp2.dll
+C:\Users\ASUS\OneDrive\Desktop\c-sarp-main\WinFormsApp2\obj\Debug\net5.0-windows\WinFormsApp2.sourcelink.json
+C:\Users\ASUS\OneDrive\Desktop\c-sarp-main\WinFormsApp2\obj\Debug\net5.0-windows\WinFormsApp2.Cart.resources
+C:\Users\ASUS\OneDrive\Desktop\c-sarp-main\WinFormsApp2\obj\Debug\net5.0-windows\WinFormsApp2.Form2.resources
+C:\Users\ASUS\OneDrive\Desktop\c-sarp-main\WinFormsApp2\obj\Debug\net5.0-windows\WinFormsApp2.Form3.resources
