@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ASUS\\OneDrive\\Desktop\\New folder\\final-project-submission-NihadUser-main\\WinFormsApp2\\WinFormsApp2.csproj": {}
+    "C:\\Users\\ASUS\\OneDrive\\Desktop\\final-project-submission-NihadUser-main\\WinFormsApp2\\WinFormsApp2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ASUS\\OneDrive\\Desktop\\New folder\\final-project-submission-NihadUser-main\\WinFormsApp2\\WinFormsApp2.csproj": {
+    "C:\\Users\\ASUS\\OneDrive\\Desktop\\final-project-submission-NihadUser-main\\WinFormsApp2\\WinFormsApp2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASUS\\OneDrive\\Desktop\\New folder\\final-project-submission-NihadUser-main\\WinFormsApp2\\WinFormsApp2.csproj",
+        "projectUniqueName": "C:\\Users\\ASUS\\OneDrive\\Desktop\\final-project-submission-NihadUser-main\\WinFormsApp2\\WinFormsApp2.csproj",
         "projectName": "WinFormsApp2",
-        "projectPath": "C:\\Users\\ASUS\\OneDrive\\Desktop\\New folder\\final-project-submission-NihadUser-main\\WinFormsApp2\\WinFormsApp2.csproj",
+        "projectPath": "C:\\Users\\ASUS\\OneDrive\\Desktop\\final-project-submission-NihadUser-main\\WinFormsApp2\\WinFormsApp2.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASUS\\OneDrive\\Desktop\\New folder\\final-project-submission-NihadUser-main\\WinFormsApp2\\obj\\",
+        "outputPath": "C:\\Users\\ASUS\\OneDrive\\Desktop\\final-project-submission-NihadUser-main\\WinFormsApp2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",

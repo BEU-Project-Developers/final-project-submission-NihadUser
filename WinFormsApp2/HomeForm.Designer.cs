@@ -2,15 +2,10 @@
 {
     partial class HomeForm
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private Label label1;
+        private FlowLayoutPanel flowLayoutPanel1; // Add FlowLayoutPanel
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,15 +15,11 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForm));
             label1 = new Label();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             SuspendLayout();
             // 
             // label1
@@ -36,25 +27,33 @@
             label1.AutoSize = true;
             label1.Location = new Point(219, 134);
             label1.Name = "label1";
-            label1.Size = new Size(50, 20);
+            label1.Size = new Size(0, 20);
             label1.TabIndex = 0;
-            label1.Text = "label1";
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown; // Flow vertically
+            flowLayoutPanel1.WrapContents = false; // Prevent wrapping
+            flowLayoutPanel1.Location = new Point(10, 80); // Adjusted location
+            flowLayoutPanel1.Size = new Size(500, 471); // Ensure enough space for one card per row
+            flowLayoutPanel1.TabIndex = 1;
             // 
             // HomeForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(521, 595);
+            BackColor = Color.FromArgb(210, 203, 170);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(521, 608);
             Controls.Add(label1);
+            Controls.Add(flowLayoutPanel1);
             Name = "HomeForm";
             Text = "HomeForm";
             Load += HomeForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
-
-        #endregion
-
-        private Label label1;
     }
 }

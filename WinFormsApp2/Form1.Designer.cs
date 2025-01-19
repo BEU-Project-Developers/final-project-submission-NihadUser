@@ -75,7 +75,7 @@
             // 
             // titleLabel
             // 
-            titleLabel.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            titleLabel.Font = new Font("Viner Hand ITC", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             titleLabel.ForeColor = Color.DarkSlateBlue;
             titleLabel.Location = new Point(100, 85);
             titleLabel.Name = "titleLabel";
