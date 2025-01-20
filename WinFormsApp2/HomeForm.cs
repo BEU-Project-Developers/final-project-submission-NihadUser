@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -9,9 +10,12 @@ namespace WinFormsApp2
 {
     public partial class HomeForm : Form
     {
+        private AppDbContext _dbContext;
+
         public HomeForm()
         {
             InitializeComponent();
+            _dbContext = new AppDbContext(); // Initialize DbContext
         }
 
         private void HomeForm_Load(object sender, EventArgs e)
@@ -56,7 +60,7 @@ namespace WinFormsApp2
             // Main panel for the product card
             Panel panel = new Panel
             {
-                Size = new Size((flowLayoutPanel1.ClientSize.Width / 2) - 40, 480), // Adjust width for two cards in a row
+                Size = new Size((flowLayoutPanel1.ClientSize.Width / 2) - 45, 480), // Adjust width for two cards in a row
                 Margin = new Padding(20, 10, 20, 10),
                 Padding = new Padding(20),
                 BackColor = Color.White, // White background for a clean look
@@ -90,12 +94,11 @@ namespace WinFormsApp2
             {
                 try
                 {
-                    // If Image is a URL, use WebClient to download the image
                     if (product.Image.StartsWith("http"))
                     {
                         using (var client = new System.Net.WebClient())
                         {
-                            byte[] imageBytes = client.DownloadData(product.Image); // Use the 'Image' property from the database
+                            byte[] imageBytes = client.DownloadData(product.Image);
                             using (var ms = new System.IO.MemoryStream(imageBytes))
                             {
                                 pictureBox.Image = Image.FromStream(ms);
@@ -104,18 +107,17 @@ namespace WinFormsApp2
                     }
                     else
                     {
-                        // If the Image property is a file path, load the image from the file system
-                        pictureBox.Image = Image.FromFile(product.Image); // Replace with logic for file path if needed
+                        pictureBox.Image = Image.FromFile(product.Image);
                     }
                 }
                 catch
                 {
-                    pictureBox.Image = null; // Use a placeholder image if needed
+                    pictureBox.Image = null;
                 }
             }
             else
             {
-                pictureBox.Image = null; // If no image URL exists, handle accordingly (use placeholder if needed)
+                pictureBox.Image = null;
             }
 
             // Label for product name
@@ -135,27 +137,27 @@ namespace WinFormsApp2
                 Font = new Font("Arial", 14, FontStyle.Bold),
                 Location = new Point(20, lblName.Bottom + 5),
                 AutoSize = true,
-                ForeColor = Color.FromArgb(0, 120, 215) // Blue color for price
+                ForeColor = Color.FromArgb(0, 120, 215)
             };
 
-            // Location label (optional if you have this data)
+            // Location label (optional)
             Label lblLocation = new Label
             {
-                Text = "Chittagong, Bangladesh", // Replace with product-specific location
+                Text = "Chittagong, Bangladesh",
                 Font = new Font("Arial", 10, FontStyle.Regular),
                 Location = new Point(20, lblPrice.Bottom + 5),
                 AutoSize = true,
                 ForeColor = Color.Gray
             };
 
-            // Rating label (optional if you have this data)
+            // Rating label (optional)
             Label lblRating = new Label
             {
-                Text = "\u2605 5.0 (120 reviews)", // Unicode star character
+                Text = "\u2605 5.0 (120 reviews)",
                 Font = new Font("Arial", 10, FontStyle.Regular),
                 Location = new Point(20, lblLocation.Bottom + 5),
                 AutoSize = true,
-                ForeColor = Color.FromArgb(255, 165, 0) // Orange color for rating
+                ForeColor = Color.FromArgb(255, 165, 0)
             };
 
             // Button for viewing details
@@ -171,6 +173,7 @@ namespace WinFormsApp2
             };
             btnViewDetails.FlatAppearance.BorderSize = 0;
 
+            // Show Edit and Delete buttons if the user is the product owner
             if (product.UserId == loggedInUserId)
             {
                 // Edit button
@@ -198,6 +201,36 @@ namespace WinFormsApp2
                     Font = new Font("Arial", 10, FontStyle.Bold)
                 };
                 btnDelete.FlatAppearance.BorderSize = 0;
+
+                // Event handler for the "Edit" button
+                btnEdit.Click += (sender, e) =>
+                {
+                    EditProduct editProductForm = new EditProduct(product.Id); // Pass the product Id to EditProduct form
+                    editProductForm.Show();
+                };
+
+                // Event handler for the "Delete" button
+                btnDelete.Click += (sender, e) =>
+                {
+                    try
+                    {
+                        // Set the deleted_at property to the current date/time
+                            product.DeletedAt = DateTime.Now;
+
+                        // Update the product in the database
+                        _dbContext.Products.Update(product);
+                        _dbContext.SaveChanges();
+
+                        MessageBox.Show("Product marked as deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Optionally, remove the product card from the UI after deletion
+                        panel.Visible = false;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error deleting product: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                };
 
                 // Add buttons to the panel
                 panel.Controls.Add(btnEdit);
@@ -276,7 +309,8 @@ namespace WinFormsApp2
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-
+            CreateProduct productCreateForm = new CreateProduct();
+            productCreateForm.Show();
         }
     }
 }
