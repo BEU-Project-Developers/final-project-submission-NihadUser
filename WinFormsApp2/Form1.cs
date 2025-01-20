@@ -84,6 +84,8 @@ namespace WinFormsApp2
 
                 UserSession.UserId = user.Id; // Store UserId
                 UserSession.UserName = user.UserName;
+                UserSession.Name = user.Name;
+
 
                 // Open Home form or the next step in your application
                 HomeForm homeForm = new HomeForm();

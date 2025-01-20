@@ -17,7 +17,8 @@ namespace WinFormsApp2.Models
         public DateTime? UpdatedAt { get; set; } // Updated Timestamp (nullable)
         public DateTime? DeletedAt { get; set; } // Soft Delete Timestamp (nullable)
         public int UserId { get; set; } // Foreign Key to Users table (admin/user who added the product)
-        public int CategoryId { get; set; } // Foreign Key to Categories table (admin/user who added the product)
+        public int CategoryId { get; set; } // Foreign Key to Categories table (admin/user who added the product)   
+        public string Image { get; set; }  // This will store the image URL or path
         public int Status { get; set; } = 1; // Product Status (default to 1)
     }
 }
