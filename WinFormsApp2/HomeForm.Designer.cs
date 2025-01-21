@@ -23,6 +23,7 @@
             flowLayoutPanel1 = new FlowLayoutPanel();
             btnCreate = new Button();
             button1 = new Button();
+            button2 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -67,6 +68,17 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // button2
+            // 
+            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
+            button2.BackgroundImageLayout = ImageLayout.Stretch;
+            button2.Location = new Point(880, 20);
+            button2.Name = "button2";
+            button2.Size = new Size(46, 40);
+            button2.TabIndex = 4;
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // HomeForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -74,6 +86,7 @@
             BackColor = Color.White;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1020, 608);
+            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(btnCreate);
             Controls.Add(label1);
@@ -86,5 +99,6 @@
         }
 
         private Button button1;
+        private Button button2;
     }
 }

@@ -259,5 +259,12 @@ namespace WinFormsApp2
             CreateProduct createProductForm = new CreateProduct();
             createProductForm.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int loggedInUserId = UserSession.UserId;
+            BasketForm basket = new BasketForm(loggedInUserId);
+            basket.Show();
+        }
     }
 }

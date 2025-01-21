@@ -38,101 +38,156 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox = new PictureBox();
-            this.lblProductName = new Label();
-            this.lblPrice = new Label();
-            this.lblCategory = new Label();
-            this.lblOwner = new Label();
-            this.lblOwnerPhone = new Label();
-            this.lblProductAddress = new Label();
-            this.lblDescription = new Label();
-            this.detailsPanel = new Panel();
-            this.btnSave = new Button();
-            this.btnShare = new Button();
-
-            // PictureBox for product image
-            this.pictureBox.Location = new System.Drawing.Point(20, 20);
-            this.pictureBox.Size = new System.Drawing.Size(350, 250);
-            this.pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            // Panel for product details
-            this.detailsPanel.Location = new System.Drawing.Point(400, 20);
-            this.detailsPanel.Size = new System.Drawing.Size(480, 550);
-            this.detailsPanel.BackColor = System.Drawing.Color.WhiteSmoke;
-
-            // Label for product name
-            this.lblProductName.Font = new System.Drawing.Font("Segoe UI", 18, System.Drawing.FontStyle.Bold);
-            this.lblProductName.Location = new System.Drawing.Point(20, 20);
-            this.lblProductName.AutoSize = true;
-
-            // Label for price
-            this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 14, System.Drawing.FontStyle.Regular);
-            this.lblPrice.Location = new System.Drawing.Point(20, 70);
-            this.lblPrice.AutoSize = true;
-
-            // Label for category
-            this.lblCategory.Font = new System.Drawing.Font("Segoe UI", 14, System.Drawing.FontStyle.Regular);
-            this.lblCategory.Location = new System.Drawing.Point(20, 120);
-            this.lblCategory.AutoSize = true;
-
-            // Label for owner
-            this.lblOwner.Font = new System.Drawing.Font("Segoe UI", 14, System.Drawing.FontStyle.Regular);
-            this.lblOwner.Location = new System.Drawing.Point(20, 170);
-            this.lblOwner.AutoSize = true;
-
-            // Label for owner phone
-            this.lblOwnerPhone.Font = new System.Drawing.Font("Segoe UI", 14, System.Drawing.FontStyle.Regular);
-            this.lblOwnerPhone.Location = new System.Drawing.Point(20, 220);
-            this.lblOwnerPhone.AutoSize = true;
-
-            // Label for product address
-            this.lblProductAddress.Font = new System.Drawing.Font("Segoe UI", 14, System.Drawing.FontStyle.Regular);
-            this.lblProductAddress.Location = new System.Drawing.Point(20, 270);
-            this.lblProductAddress.AutoSize = true;
-
-            // Label for description
-            this.lblDescription.Font = new System.Drawing.Font("Segoe UI", 12, System.Drawing.FontStyle.Regular);
-            this.lblDescription.Location = new System.Drawing.Point(20, 320);
-            this.lblDescription.Size = new System.Drawing.Size(340, 100);
-            this.lblDescription.AutoEllipsis = true;
-
-            // Save Button
-            this.btnSave.Text = "Save";
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12, System.Drawing.FontStyle.Bold);
-            this.btnSave.BackColor = System.Drawing.Color.LightGreen;
-            this.btnSave.ForeColor = System.Drawing.Color.Black;
-            this.btnSave.Location = new System.Drawing.Point(20, 430);
-            this.btnSave.Size = new System.Drawing.Size(150, 40);
-            this.btnSave.FlatStyle = FlatStyle.Flat;
-
-            // Share Button
-            this.btnShare.Text = "Share";
-            this.btnShare.Font = new System.Drawing.Font("Segoe UI", 12, System.Drawing.FontStyle.Bold);
-            this.btnShare.BackColor = System.Drawing.Color.LightBlue;
-            this.btnShare.ForeColor = System.Drawing.Color.Black;
-            this.btnShare.Location = new System.Drawing.Point(200, 430);
-            this.btnShare.Size = new System.Drawing.Size(150, 40);
-            this.btnShare.FlatStyle = FlatStyle.Flat;
-
-            // Add components to panel
-            this.detailsPanel.Controls.Add(this.lblProductName);
-            this.detailsPanel.Controls.Add(this.lblPrice);
-            this.detailsPanel.Controls.Add(this.lblCategory);
-            this.detailsPanel.Controls.Add(this.lblOwner);
-            this.detailsPanel.Controls.Add(this.lblOwnerPhone);
-            this.detailsPanel.Controls.Add(this.lblProductAddress);
-            this.detailsPanel.Controls.Add(this.lblDescription);
-            this.detailsPanel.Controls.Add(this.btnSave);
-            this.detailsPanel.Controls.Add(this.btnShare);
-
+            pictureBox = new PictureBox();
+            lblProductName = new Label();
+            lblPrice = new Label();
+            lblCategory = new Label();
+            lblOwner = new Label();
+            lblOwnerPhone = new Label();
+            lblProductAddress = new Label();
+            lblDescription = new Label();
+            detailsPanel = new Panel();
+            btnSave = new Button();
+            btnShare = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
+            detailsPanel.SuspendLayout();
+            SuspendLayout();
+            // 
+            // pictureBox
+            // 
+            pictureBox.Location = new Point(20, 25);
+            pictureBox.Margin = new Padding(3, 4, 3, 4);
+            pictureBox.Name = "pictureBox";
+            pictureBox.Size = new Size(350, 312);
+            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox.TabIndex = 0;
+            pictureBox.TabStop = false;
+            // 
+            // lblProductName
+            // 
+            lblProductName.AutoSize = true;
+            lblProductName.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblProductName.Location = new Point(20, 25);
+            lblProductName.Name = "lblProductName";
+            lblProductName.Size = new Size(0, 41);
+            lblProductName.TabIndex = 0;
+            // 
+            // lblPrice
+            // 
+            lblPrice.AutoSize = true;
+            lblPrice.Font = new Font("Segoe UI", 10F);
+            lblPrice.Location = new Point(20, 88);
+            lblPrice.Name = "lblPrice";
+            lblPrice.Size = new Size(0, 23);
+            lblPrice.TabIndex = 1;
+            // 
+            // lblCategory
+            // 
+            lblCategory.AutoSize = true;
+            lblCategory.Font = new Font("Segoe UI", 10F);
+            lblCategory.Location = new Point(20, 150);
+            lblCategory.Name = "lblCategory";
+            lblCategory.Size = new Size(0, 23);
+            lblCategory.TabIndex = 2;
+            // 
+            // lblOwner
+            // 
+            lblOwner.AutoSize = true;
+            lblOwner.Font = new Font("Segoe UI", 10F);
+            lblOwner.Location = new Point(20, 212);
+            lblOwner.Name = "lblOwner";
+            lblOwner.Size = new Size(0, 23);
+            lblOwner.TabIndex = 3;
+            // 
+            // lblOwnerPhone
+            // 
+            lblOwnerPhone.AutoSize = true;
+            lblOwnerPhone.Font = new Font("Segoe UI", 10F);
+            lblOwnerPhone.Location = new Point(20, 275);
+            lblOwnerPhone.Name = "lblOwnerPhone";
+            lblOwnerPhone.Size = new Size(0, 23);
+            lblOwnerPhone.TabIndex = 4;
+            // 
+            // lblProductAddress
+            // 
+            lblProductAddress.AutoSize = true;
+            lblProductAddress.Font = new Font("Segoe UI", 10F);
+            lblProductAddress.Location = new Point(20, 338);
+            lblProductAddress.Name = "lblProductAddress";
+            lblProductAddress.Size = new Size(0, 23);
+            lblProductAddress.TabIndex = 5;
+            // 
+            // lblDescription
+            // 
+            lblDescription.AutoEllipsis = true;
+            lblDescription.Font = new Font("Segoe UI", 8F);
+            lblDescription.Location = new Point(20, 400);
+            lblDescription.Name = "lblDescription";
+            lblDescription.Size = new Size(340, 125);
+            lblDescription.TabIndex = 6;
+            // 
+            // detailsPanel
+            // 
+            detailsPanel.BackColor = Color.WhiteSmoke;
+            detailsPanel.Controls.Add(lblProductName);
+            detailsPanel.Controls.Add(lblPrice);
+            detailsPanel.Controls.Add(lblCategory);
+            detailsPanel.Controls.Add(lblOwner);
+            detailsPanel.Controls.Add(lblOwnerPhone);
+            detailsPanel.Controls.Add(lblProductAddress);
+            detailsPanel.Controls.Add(lblDescription);
+            detailsPanel.Controls.Add(btnSave);
+            detailsPanel.Controls.Add(btnShare);
+            detailsPanel.Location = new Point(400, 25);
+            detailsPanel.Margin = new Padding(3, 4, 3, 4);
+            detailsPanel.Name = "detailsPanel";
+            detailsPanel.Size = new Size(480, 688);
+            detailsPanel.TabIndex = 1;
+            // 
+            // btnSave
+            // 
+            btnSave.BackColor = Color.LightGreen;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnSave.ForeColor = Color.Black;
+            btnSave.Location = new Point(20, 538);
+            btnSave.Margin = new Padding(3, 4, 3, 4);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(150, 50);
+            btnSave.TabIndex = 7;
+            btnSave.Text = "Basket";
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
+            // 
+            // btnShare
+            // 
+            btnShare.BackColor = Color.LightBlue;
+            btnShare.FlatStyle = FlatStyle.Flat;
+            btnShare.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnShare.ForeColor = Color.Black;
+            btnShare.Location = new Point(200, 538);
+            btnShare.Margin = new Padding(3, 4, 3, 4);
+            btnShare.Name = "btnShare";
+            btnShare.Size = new Size(150, 50);
+            btnShare.TabIndex = 8;
+            btnShare.Text = "Share";
+            btnShare.UseVisualStyleBackColor = false;
+            // 
             // DetailsForm
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 500);
-            this.Controls.Add(this.pictureBox);
-            this.Controls.Add(this.detailsPanel);
-            this.Text = "Product Details";
-            this.Load += new System.EventHandler(this.DetailsForm_Load);
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 625);
+            Controls.Add(pictureBox);
+            Controls.Add(detailsPanel);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "DetailsForm";
+            Text = "Product Details";
+            Load += DetailsForm_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
+            detailsPanel.ResumeLayout(false);
+            detailsPanel.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

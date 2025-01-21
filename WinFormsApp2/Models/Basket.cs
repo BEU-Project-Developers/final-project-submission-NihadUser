@@ -16,5 +16,7 @@ namespace WinFormsApp2.Models
         public bool IsCheckedOut { get; set; } = false; // Indicates if the basket has been checked out
         public DateTime? UpdatedAt { get; set; } // Updated Timestamp (nullable)
         public DateTime? DeletedAt { get; set; } // Soft Delete Timestamp (nullable)
+        public virtual Product Product { get; set; } // Navigation property
+
     }
 }

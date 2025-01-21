@@ -95,5 +95,43 @@ namespace WinFormsApp2
                 MessageBox.Show($"Error loading product details: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int currentUserId = UserSession.UserId;
+
+                using (var context = new AppDbContext())
+                {
+                    var existingBasketItem = context.Baskets
+                        .FirstOrDefault(b => b.UserId == currentUserId && b.ProductId == _productId && !b.IsCheckedOut);
+
+                    if (existingBasketItem != null)
+                    {
+                        MessageBox.Show("This product is already in your basket.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
+                    var basketItem = new Basket
+                    {
+                        UserId = currentUserId,
+                        ProductId = _productId,
+                        CreatedAt = DateTime.Now
+                    };
+
+                    context.Baskets.Add(basketItem);
+                    context.SaveChanges();
+                    MessageBox.Show("Product added to basket successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    BasketForm basket = new BasketForm(currentUserId);
+                    basket.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while adding the product to the basket: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }
