@@ -15,6 +15,11 @@
         private TextBox txtProductDescription;
         private TextBox txtProductImageUrl;
 
+        private Label lblOwnerPhone;
+        private Label lblProductAddress;
+        private TextBox txtOwnerPhone;
+        private TextBox txtProductAddress;
+
         private ComboBox cmbCategory;
 
         private Button btnSave;
@@ -140,7 +145,7 @@
             btnSave.BackColor = Color.Green;
             btnSave.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(320, 325);
+            btnSave.Location = new Point(320, 405);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(100, 40);
             btnSave.TabIndex = 10;
@@ -153,20 +158,63 @@
             btnCancel.BackColor = Color.Red;
             btnCancel.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnCancel.ForeColor = Color.White;
-            btnCancel.Location = new Point(450, 325);
+            btnCancel.Location = new Point(450, 405);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(100, 40);
             btnCancel.TabIndex = 11;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click_1;
+
+            // lblOwnerPhone
+            lblOwnerPhone = new Label();
+            lblOwnerPhone.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblOwnerPhone.ForeColor = Color.Black;
+            lblOwnerPhone.Location = new Point(150, 300);
+            lblOwnerPhone.Name = "lblOwnerPhone";
+            lblOwnerPhone.Size = new Size(150, 30);
+            lblOwnerPhone.TabIndex = 12;
+            lblOwnerPhone.Text = "Owner Phone:";
+
+            // txtOwnerPhone
+            txtOwnerPhone = new TextBox();
+            txtOwnerPhone.Font = new Font("Segoe UI", 10F);
+            txtOwnerPhone.Location = new Point(320, 300);
+            txtOwnerPhone.Name = "txtOwnerPhone";
+            txtOwnerPhone.Size = new Size(300, 30);
+            txtOwnerPhone.TabIndex = 13;
+
+            // lblProductAddress
+            lblProductAddress = new Label();
+            lblProductAddress.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblProductAddress.ForeColor = Color.Black;
+            lblProductAddress.Location = new Point(120, 350);
+            lblProductAddress.Name = "lblProductAddress";
+            lblProductAddress.Size = new Size(180, 30);
+            lblProductAddress.TabIndex = 14;
+            lblProductAddress.Text = "Product Address:";
+
+            // txtProductAddress
+            txtProductAddress = new TextBox();
+            txtProductAddress.Font = new Font("Segoe UI", 10F);
+            txtProductAddress.Location = new Point(320, 350);
+            txtProductAddress.Name = "txtProductAddress";
+            txtProductAddress.Size = new Size(300, 30);
+            txtProductAddress.TabIndex = 15;
+
+            // Add new controls to the form
+            Controls.Add(lblOwnerPhone);
+            Controls.Add(txtOwnerPhone);
+            Controls.Add(lblProductAddress);
+            Controls.Add(txtProductAddress);
+
             // 
             // CreateProduct
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(800, 500);
+            ClientSize = new Size(800, 550);
             Controls.Add(lblProductName);
             Controls.Add(txtProductName);
             Controls.Add(lblProductPrice);

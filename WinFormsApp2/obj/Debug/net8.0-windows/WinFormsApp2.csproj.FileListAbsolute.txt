@@ -399,3 +399,4 @@ C:\Users\ASUS\OneDrive\Desktop\final-project-submission-NihadUser-main\WinFormsA
 C:\Users\ASUS\OneDrive\Desktop\final-project-submission-NihadUser-main\WinFormsApp2\obj\Debug\net8.0-windows\ref\WinFormsApp2.dll
 C:\Users\ASUS\OneDrive\Desktop\final-project-submission-NihadUser-main\WinFormsApp2\obj\Debug\net8.0-windows\WinFormsApp2.CreateProduct.resources
 C:\Users\ASUS\OneDrive\Desktop\final-project-submission-NihadUser-main\WinFormsApp2\obj\Debug\net8.0-windows\WinFormsApp2.EditProduct.resources
+C:\Users\ASUS\OneDrive\Desktop\final-project-submission-NihadUser-main\WinFormsApp2\obj\Debug\net8.0-windows\WinFormsApp2.DetailsForm.resources

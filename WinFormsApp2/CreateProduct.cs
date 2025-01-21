@@ -52,6 +52,8 @@ namespace WinFormsApp2
             {
                 if (string.IsNullOrWhiteSpace(txtProductName.Text) ||
                     string.IsNullOrWhiteSpace(txtProductPrice.Text) ||
+                    string.IsNullOrWhiteSpace(txtOwnerPhone.Text) || // Validate Owner Phone
+                    string.IsNullOrWhiteSpace(txtProductAddress.Text) || // Validate Product Address
                     cmbCategory.SelectedValue == null)
                 {
                     MessageBox.Show("Please fill in all required fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -67,6 +69,8 @@ namespace WinFormsApp2
                     Image = txtProductImageUrl.Text.Trim(),
                     CategoryId = (int)cmbCategory.SelectedValue,
                     UserId = (int)UserSession.UserId, // Assume Session.UserId exists
+                    OwnerPhone = txtOwnerPhone.Text.Trim(), // Add Owner Phone
+                    ProductAddress = txtProductAddress.Text.Trim(), // Add Product Address
                     CreatedAt = DateTime.Now,
                     Status = 1
                 };
@@ -83,5 +87,6 @@ namespace WinFormsApp2
                 MessageBox.Show($"Error saving product: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

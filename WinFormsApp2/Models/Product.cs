@@ -20,5 +20,7 @@ namespace WinFormsApp2.Models
         public int CategoryId { get; set; } // Foreign Key to Categories table (admin/user who added the product)   
         public string Image { get; set; }  // This will store the image URL or path
         public int Status { get; set; } = 1; // Product Status (default to 1)
+        public string OwnerPhone { get; set; } // Phone number of the product owner
+        public string ProductAddress { get; set; }
     }
 }

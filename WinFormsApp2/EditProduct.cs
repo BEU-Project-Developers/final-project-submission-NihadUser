@@ -38,6 +38,10 @@ namespace WinFormsApp2
                 txtProductDescription.Text = product.Description;
                 txtImageUrl.Text = product.Image;
 
+                // Set the owner phone and address data
+                txtOwnerPhone.Text = product.OwnerPhone;
+                txtOwnerAddress.Text = product.ProductAddress;
+
                 // Load the categories into the combo box (assuming `Categories` is a table or list)
                 var categories = _dbContext.Categories.ToList();
                 cmbCategory.DataSource = categories;
@@ -52,6 +56,7 @@ namespace WinFormsApp2
                 MessageBox.Show($"An error occurred while loading the product: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -78,6 +83,10 @@ namespace WinFormsApp2
                 product.Image = txtImageUrl.Text;
                 product.CategoryId = (int)cmbCategory.SelectedValue;
 
+                // Update the owner's phone and address
+                product.OwnerPhone = txtOwnerPhone.Text;
+                product.ProductAddress = txtOwnerAddress.Text;
+
                 // Save changes to the database
                 _dbContext.SaveChanges();
 
@@ -89,6 +98,7 @@ namespace WinFormsApp2
                 MessageBox.Show($"An error occurred while saving the product: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void lblProductDescription_Click(object sender, EventArgs e)
         {

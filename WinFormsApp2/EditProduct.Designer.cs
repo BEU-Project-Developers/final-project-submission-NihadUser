@@ -15,7 +15,6 @@
 
         #region Windows Form Designer generated code
 
-        // Update the InitializeComponent method to fix the layout
         private void InitializeComponent()
         {
             lblProductName = new Label();
@@ -31,6 +30,10 @@
             btnSave = new Button();
             btnCancel = new Button();
             picProductImage = new PictureBox();
+            lblOwnerPhone = new Label();
+            txtOwnerPhone = new TextBox();
+            lblOwnerAddress = new Label();
+            txtOwnerAddress = new TextBox();
             ((System.ComponentModel.ISupportInitialize)picProductImage).BeginInit();
             SuspendLayout();
             // 
@@ -93,7 +96,7 @@
             // 
             lblImageUrl.AutoSize = true;
             lblImageUrl.Font = new Font("Arial", 10F, FontStyle.Bold);
-            lblImageUrl.Location = new Point(50, 320);
+            lblImageUrl.Location = new Point(50, 433);
             lblImageUrl.Name = "lblImageUrl";
             lblImageUrl.Size = new Size(100, 19);
             lblImageUrl.TabIndex = 8;
@@ -102,7 +105,7 @@
             // txtImageUrl
             // 
             txtImageUrl.Font = new Font("Arial", 10F);
-            txtImageUrl.Location = new Point(200, 320);
+            txtImageUrl.Location = new Point(200, 433);
             txtImageUrl.Name = "txtImageUrl";
             txtImageUrl.Size = new Size(400, 27);
             txtImageUrl.TabIndex = 9;
@@ -132,10 +135,10 @@
             btnSave.BackColor = Color.LimeGreen;
             btnSave.Font = new Font("Arial", 10F, FontStyle.Bold);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(200, 530);
+            btnSave.Location = new Point(214, 661);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(120, 40);
-            btnSave.TabIndex = 11;
+            btnSave.TabIndex = 14;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click_1;
@@ -145,26 +148,63 @@
             btnCancel.BackColor = Color.Crimson;
             btnCancel.Font = new Font("Arial", 10F, FontStyle.Bold);
             btnCancel.ForeColor = Color.White;
-            btnCancel.Location = new Point(340, 530);
+            btnCancel.Location = new Point(354, 661);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(120, 40);
-            btnCancel.TabIndex = 12;
+            btnCancel.TabIndex = 15;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click_1;
             // 
             // picProductImage
             // 
-            picProductImage.Location = new Point(200, 360);
+            picProductImage.Location = new Point(200, 488);
             picProductImage.Name = "picProductImage";
             picProductImage.Size = new Size(400, 150);
             picProductImage.SizeMode = PictureBoxSizeMode.StretchImage;
-            picProductImage.TabIndex = 10;
+            picProductImage.TabIndex = 16;
             picProductImage.TabStop = false;
+            // 
+            // lblOwnerPhone
+            // 
+            lblOwnerPhone.AutoSize = true;
+            lblOwnerPhone.Font = new Font("Arial", 10F, FontStyle.Bold);
+            lblOwnerPhone.Location = new Point(50, 319);
+            lblOwnerPhone.Name = "lblOwnerPhone";
+            lblOwnerPhone.Size = new Size(122, 19);
+            lblOwnerPhone.TabIndex = 10;
+            lblOwnerPhone.Text = "Owner Phone:";
+            // 
+            // txtOwnerPhone
+            // 
+            txtOwnerPhone.Font = new Font("Arial", 10F);
+            txtOwnerPhone.Location = new Point(200, 319);
+            txtOwnerPhone.Name = "txtOwnerPhone";
+            txtOwnerPhone.Size = new Size(400, 27);
+            txtOwnerPhone.TabIndex = 11;
+            // 
+            // lblOwnerAddress
+            // 
+            lblOwnerAddress.AutoSize = true;
+            lblOwnerAddress.Font = new Font("Arial", 10F, FontStyle.Bold);
+            lblOwnerAddress.Location = new Point(50, 359);
+            lblOwnerAddress.Name = "lblOwnerAddress";
+            lblOwnerAddress.Size = new Size(136, 19);
+            lblOwnerAddress.TabIndex = 12;
+            lblOwnerAddress.Text = "Owner Address:";
+            // 
+            // txtOwnerAddress
+            // 
+            txtOwnerAddress.Font = new Font("Arial", 10F);
+            txtOwnerAddress.Location = new Point(200, 359);
+            txtOwnerAddress.Multiline = true;
+            txtOwnerAddress.Name = "txtOwnerAddress";
+            txtOwnerAddress.Size = new Size(400, 50);
+            txtOwnerAddress.TabIndex = 13;
             // 
             // EditProduct
             // 
-            ClientSize = new Size(700, 600);
+            ClientSize = new Size(950, 800);
             Controls.Add(lblProductName);
             Controls.Add(txtProductName);
             Controls.Add(lblProductPrice);
@@ -175,6 +215,10 @@
             Controls.Add(cmbCategory);
             Controls.Add(lblImageUrl);
             Controls.Add(txtImageUrl);
+            Controls.Add(lblOwnerPhone);
+            Controls.Add(txtOwnerPhone);
+            Controls.Add(lblOwnerAddress);
+            Controls.Add(txtOwnerAddress);
             Controls.Add(picProductImage);
             Controls.Add(btnSave);
             Controls.Add(btnCancel);
@@ -184,7 +228,6 @@
             ResumeLayout(false);
             PerformLayout();
         }
-
 
         #endregion
 
@@ -200,7 +243,11 @@
         private System.Windows.Forms.ComboBox cmbCategory;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.PictureBox picProductImage; // PictureBox for product image preview
+        private System.Windows.Forms.PictureBox picProductImage;
+        private System.Windows.Forms.Label lblOwnerPhone; // New Label for Owner Phone
+        private System.Windows.Forms.TextBox txtOwnerPhone; // New Textbox for Owner Phone
+        private System.Windows.Forms.Label lblOwnerAddress; // New Label for Owner Address
+        private System.Windows.Forms.TextBox txtOwnerAddress; // New Textbox for Owner Address
 
         // Event handler to load the image from the URL when the user enters a new URL
         private void txtImageUrl_TextChanged(object sender, EventArgs e)
