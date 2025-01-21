@@ -44,17 +44,22 @@ namespace WinFormsApp2
                         .Select(c => c.Name)
                         .FirstOrDefault() ?? "Unknown";
 
-                    // Fetch user/owner name
-                    var ownerName = context.Users
+                    // Fetch user/owner details
+                    var owner = context.Users
                         .Where(u => u.Id == product.UserId)
-                        .Select(u => u.Name)
-                        .FirstOrDefault() ?? "Unknown";
+                        .Select(u => new { u.Name })
+                        .FirstOrDefault();
+
+                    var ownerName = owner?.Name ?? "Unknown";
+                    var ownerPhone = product?.OwnerPhone ?? "Not available";
 
                     // Set form details
                     lblProductName.Text = product.Name;
                     lblPrice.Text = $"Price: ${product.Price:F2}";
                     lblCategory.Text = $"Category: {categoryName}";
                     lblOwner.Text = $"Owner: {ownerName}";
+                    lblOwnerPhone.Text = $"Owner Phone: {ownerPhone}";
+                    lblProductAddress.Text = $"Address: {product.ProductAddress ?? "Not available"}";
                     lblDescription.Text = product.Description ?? "No description available.";
 
                     // Load image
@@ -90,6 +95,5 @@ namespace WinFormsApp2
                 MessageBox.Show($"Error loading product details: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
     }
 }
