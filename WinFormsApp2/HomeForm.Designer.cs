@@ -18,9 +18,11 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForm));
             label1 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
             btnCreate = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -54,6 +56,17 @@
             btnCreate.UseVisualStyleBackColor = false;
             btnCreate.Click += btnCreate_Click;
             // 
+            // button1
+            // 
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.Location = new Point(932, 20);
+            button1.Name = "button1";
+            button1.Size = new Size(47, 40);
+            button1.TabIndex = 3;
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // HomeForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -61,6 +74,7 @@
             BackColor = Color.White;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1020, 608);
+            Controls.Add(button1);
             Controls.Add(btnCreate);
             Controls.Add(label1);
             Controls.Add(flowLayoutPanel1);
@@ -70,5 +84,7 @@
             ResumeLayout(false);
             PerformLayout();
         }
+
+        private Button button1;
     }
 }

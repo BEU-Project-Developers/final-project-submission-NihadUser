@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\ASUS\\OneDrive\\Desktop\\final-project-submission-NihadUser-main\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{76A89B5A-662B-41D9-8FF9-DD07AFACA0C0}|WinFormsApp2\\WinFormsApp2.csproj|c:\\users\\asus\\onedrive\\desktop\\final-project-submission-nihaduser-main\\winformsapp2\\editproduct.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76A89B5A-662B-41D9-8FF9-DD07AFACA0C0}|WinFormsApp2\\WinFormsApp2.csproj|solutionrelative:winformsapp2\\editproduct.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{76A89B5A-662B-41D9-8FF9-DD07AFACA0C0}|WinFormsApp2\\WinFormsApp2.csproj|c:\\users\\asus\\onedrive\\desktop\\final-project-submission-nihaduser-main\\winformsapp2\\editproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76A89B5A-662B-41D9-8FF9-DD07AFACA0C0}|WinFormsApp2\\WinFormsApp2.csproj|solutionrelative:winformsapp2\\editproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{76A89B5A-662B-41D9-8FF9-DD07AFACA0C0}|WinFormsApp2\\WinFormsApp2.csproj|c:\\users\\asus\\onedrive\\desktop\\final-project-submission-nihaduser-main\\winformsapp2\\editproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{76A89B5A-662B-41D9-8FF9-DD07AFACA0C0}|WinFormsApp2\\WinFormsApp2.csproj|solutionrelative:winformsapp2\\editproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76A89B5A-662B-41D9-8FF9-DD07AFACA0C0}|WinFormsApp2\\WinFormsApp2.csproj|c:\\users\\asus\\onedrive\\desktop\\final-project-submission-nihaduser-main\\winformsapp2\\editproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76A89B5A-662B-41D9-8FF9-DD07AFACA0C0}|WinFormsApp2\\WinFormsApp2.csproj|solutionrelative:winformsapp2\\editproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{76A89B5A-662B-41D9-8FF9-DD07AFACA0C0}|WinFormsApp2\\WinFormsApp2.csproj|c:\\users\\asus\\onedrive\\desktop\\final-project-submission-nihaduser-main\\winformsapp2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76A89B5A-662B-41D9-8FF9-DD07AFACA0C0}|WinFormsApp2\\WinFormsApp2.csproj|solutionrelative:winformsapp2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,32 +22,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "EditProduct.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Desktop\\final-project-submission-NihadUser-main\\WinFormsApp2\\EditProduct.cs",
               "RelativeDocumentMoniker": "WinFormsApp2\\EditProduct.cs",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Desktop\\final-project-submission-NihadUser-main\\WinFormsApp2\\EditProduct.cs",
-              "RelativeToolTip": "WinFormsApp2\\EditProduct.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAwwF4AAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Desktop\\final-project-submission-NihadUser-main\\WinFormsApp2\\EditProduct.cs*",
+              "RelativeToolTip": "WinFormsApp2\\EditProduct.cs*",
+              "ViewState": "AgIAAFIAAAAAAAAAAADwv2MAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T16:55:03.131Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EditProduct.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Desktop\\final-project-submission-NihadUser-main\\WinFormsApp2\\EditProduct.Designer.cs",
-              "RelativeDocumentMoniker": "WinFormsApp2\\EditProduct.Designer.cs",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Desktop\\final-project-submission-NihadUser-main\\WinFormsApp2\\EditProduct.Designer.cs*",
-              "RelativeToolTip": "WinFormsApp2\\EditProduct.Designer.cs*",
-              "ViewState": "AgIAALMAAAAAAAAAAAAAwLcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T16:54:53.264Z",
+              "WhenOpened": "2025-01-21T09:15:39Z",
               "EditorCaption": ""
             },
             {
@@ -56,11 +43,24 @@
               "Title": "EditProduct.cs [Design]",
               "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Desktop\\final-project-submission-NihadUser-main\\WinFormsApp2\\EditProduct.cs",
               "RelativeDocumentMoniker": "WinFormsApp2\\EditProduct.cs",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Desktop\\final-project-submission-NihadUser-main\\WinFormsApp2\\EditProduct.cs [Design]",
-              "RelativeToolTip": "WinFormsApp2\\EditProduct.cs [Design]",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Desktop\\final-project-submission-NihadUser-main\\WinFormsApp2\\EditProduct.cs [Design]*",
+              "RelativeToolTip": "WinFormsApp2\\EditProduct.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T16:54:48.314Z",
+              "WhenOpened": "2025-01-21T09:15:29.136Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\Desktop\\final-project-submission-NihadUser-main\\WinFormsApp2\\Program.cs",
+              "RelativeDocumentMoniker": "WinFormsApp2\\Program.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\Desktop\\final-project-submission-NihadUser-main\\WinFormsApp2\\Program.cs",
+              "RelativeToolTip": "WinFormsApp2\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T18:51:39.586Z",
+              "EditorCaption": ""
             }
           ]
         }

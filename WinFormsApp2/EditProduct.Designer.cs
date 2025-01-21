@@ -30,9 +30,9 @@
             cmbCategory = new ComboBox();
             btnSave = new Button();
             btnCancel = new Button();
-            picProductImage = new PictureBox(); // New PictureBox for displaying image
+            picProductImage = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)picProductImage).BeginInit();
             SuspendLayout();
-
             // 
             // lblProductName
             // 
@@ -89,6 +89,25 @@
             txtProductDescription.Size = new Size(400, 100);
             txtProductDescription.TabIndex = 5;
             // 
+            // lblImageUrl
+            // 
+            lblImageUrl.AutoSize = true;
+            lblImageUrl.Font = new Font("Arial", 10F, FontStyle.Bold);
+            lblImageUrl.Location = new Point(50, 320);
+            lblImageUrl.Name = "lblImageUrl";
+            lblImageUrl.Size = new Size(100, 19);
+            lblImageUrl.TabIndex = 8;
+            lblImageUrl.Text = "Image URL:";
+            // 
+            // txtImageUrl
+            // 
+            txtImageUrl.Font = new Font("Arial", 10F);
+            txtImageUrl.Location = new Point(200, 320);
+            txtImageUrl.Name = "txtImageUrl";
+            txtImageUrl.Size = new Size(400, 27);
+            txtImageUrl.TabIndex = 9;
+            txtImageUrl.TextChanged += txtImageUrl_TextChanged;
+            // 
             // lblCategory
             // 
             lblCategory.AutoSize = true;
@@ -107,33 +126,6 @@
             cmbCategory.Name = "cmbCategory";
             cmbCategory.Size = new Size(400, 27);
             cmbCategory.TabIndex = 7;
-            // 
-            // lblImageUrl
-            // 
-            lblImageUrl.AutoSize = true;
-            lblImageUrl.Font = new Font("Arial", 10F, FontStyle.Bold);
-            lblImageUrl.Location = new Point(50, 320);
-            lblImageUrl.Name = "lblImageUrl";
-            lblImageUrl.Size = new Size(100, 19);
-            lblImageUrl.TabIndex = 8;
-            lblImageUrl.Text = "Image URL:";
-            // 
-            // txtImageUrl
-            // 
-            txtImageUrl.Font = new Font("Arial", 10F);
-            txtImageUrl.Location = new Point(200, 320);
-            txtImageUrl.Name = "txtImageUrl";
-            txtImageUrl.Size = new Size(400, 27);
-            txtImageUrl.TabIndex = 9;
-            txtImageUrl.TextChanged += txtImageUrl_TextChanged; // Event for handling URL change
-                                                                // 
-                                                                // picProductImage
-                                                                // 
-            picProductImage.Location = new Point(200, 360); // Place image preview below Image URL
-            picProductImage.Size = new Size(400, 150); // Size of the image preview box
-            picProductImage.SizeMode = PictureBoxSizeMode.StretchImage;
-            picProductImage.TabIndex = 10;
-            picProductImage.TabStop = false;
             // 
             // btnSave
             // 
@@ -159,6 +151,16 @@
             btnCancel.TabIndex = 12;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += btnCancel_Click_1;
+            // 
+            // picProductImage
+            // 
+            picProductImage.Location = new Point(200, 360);
+            picProductImage.Name = "picProductImage";
+            picProductImage.Size = new Size(400, 150);
+            picProductImage.SizeMode = PictureBoxSizeMode.StretchImage;
+            picProductImage.TabIndex = 10;
+            picProductImage.TabStop = false;
             // 
             // EditProduct
             // 
@@ -173,11 +175,12 @@
             Controls.Add(cmbCategory);
             Controls.Add(lblImageUrl);
             Controls.Add(txtImageUrl);
-            Controls.Add(picProductImage); // Add PictureBox to form
+            Controls.Add(picProductImage);
             Controls.Add(btnSave);
             Controls.Add(btnCancel);
             Name = "EditProduct";
             Text = "Edit Product";
+            ((System.ComponentModel.ISupportInitialize)picProductImage).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
