@@ -30,7 +30,7 @@ namespace WinFormsApp2
         private void button1_Click(object sender, EventArgs e)
         {
             int loggedInUserId = UserSession.UserId;
-            LoadProducts(loggedInUserId); 
+            LoadProducts(loggedInUserId);
         }
 
         private void LoadProducts(int loggedInUserId, string searchQuery = null)
@@ -71,11 +71,11 @@ namespace WinFormsApp2
         {
             Panel panel = new Panel
             {
-                Size = new Size((flowLayoutPanel1.ClientSize.Width / 2) - 45, 500), 
+                Size = new Size((flowLayoutPanel1.ClientSize.Width / 2) - 45, 500),
                 Margin = new Padding(20, 10, 20, 10),
                 Padding = new Padding(20),
                 BackColor = Color.White,
-                BorderStyle = BorderStyle.FixedSingle 
+                BorderStyle = BorderStyle.FixedSingle
             };
 
             PictureBox pictureBox = new PictureBox
@@ -108,7 +108,7 @@ namespace WinFormsApp2
                 }
                 catch
                 {
-                    pictureBox.Image = null; 
+                    pictureBox.Image = null;
                 }
             }
 
@@ -260,6 +260,12 @@ namespace WinFormsApp2
         {
             string searchQuery = txtSearch.Text.Trim();
             LoadProducts(UserSession.UserId, searchQuery);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            RecycleForm recycleForm = new RecycleForm();
+            recycleForm.Show();
         }
     }
 }

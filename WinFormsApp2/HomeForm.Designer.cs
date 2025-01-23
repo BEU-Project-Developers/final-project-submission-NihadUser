@@ -25,6 +25,9 @@
             btnCreate = new Button();
             button1 = new Button();
             button2 = new Button();
+            txtSearch = new TextBox();
+            btnSearch = new Button();
+            button3 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -38,48 +41,21 @@
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.Location = new Point(10, 80);
+            flowLayoutPanel1.Location = new Point(20, 120);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(1000, 471);
             flowLayoutPanel1.TabIndex = 1;
             // 
             // btnCreate
             // 
-
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
-
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(20, 80); // Adjust position as needed
-            this.txtSearch.Size = new System.Drawing.Size(200, 30);    // Adjust size as needed
-            this.txtSearch.Font = new System.Drawing.Font("Arial", 12F);
-            this.txtSearch.PlaceholderText = "Search by product name"; // Optional: Add placeholder text
-
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(230, 80); // Adjust position next to the TextBox
-            this.btnSearch.Size = new System.Drawing.Size(100, 30);    // Adjust size as needed
-            this.btnSearch.Text = "Search";
-            this.btnSearch.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(0, 120, 215);
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
-            this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.btnSearch);
-
-
             btnCreate.BackColor = Color.FromArgb(28, 112, 187);
             btnCreate.FlatAppearance.BorderSize = 0;
             btnCreate.FlatStyle = FlatStyle.Flat;
             btnCreate.Font = new Font("Arial", 10F, FontStyle.Bold);
             btnCreate.ForeColor = Color.White;
-            btnCreate.Location = new Point(10, 20);
+            btnCreate.Location = new Point(20, 20);
             btnCreate.Name = "btnCreate";
-            btnCreate.Size = new Size(120, 40);
+            btnCreate.Size = new Size(118, 40);
             btnCreate.TabIndex = 2;
             btnCreate.Text = "Add Product";
             btnCreate.UseVisualStyleBackColor = false;
@@ -107,6 +83,40 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // txtSearch
+            // 
+            txtSearch.Font = new Font("Arial", 12F);
+            txtSearch.Location = new Point(20, 80);
+            txtSearch.Name = "txtSearch";
+            txtSearch.PlaceholderText = "Search by product name";
+            txtSearch.Size = new Size(200, 30);
+            txtSearch.TabIndex = 0;
+            // 
+            // btnSearch
+            // 
+            btnSearch.BackColor = Color.FromArgb(0, 120, 215);
+            btnSearch.FlatStyle = FlatStyle.Flat;
+            btnSearch.Font = new Font("Arial", 10F, FontStyle.Bold);
+            btnSearch.ForeColor = Color.White;
+            btnSearch.Location = new Point(230, 80);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(100, 30);
+            btnSearch.TabIndex = 1;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = false;
+            btnSearch.Click += BtnSearch_Click;
+            // 
+            // button3
+            // 
+            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
+            button3.BackgroundImageLayout = ImageLayout.Stretch;
+            button3.Location = new Point(835, 20);
+            button3.Name = "button3";
+            button3.Size = new Size(39, 40);
+            button3.TabIndex = 5;
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // HomeForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -114,13 +124,14 @@
             BackColor = Color.White;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1020, 608);
+            Controls.Add(button3);
+            Controls.Add(txtSearch);
+            Controls.Add(btnSearch);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(btnCreate);
             Controls.Add(label1);
             Controls.Add(flowLayoutPanel1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(20, 120); 
-
             Name = "HomeForm";
             Text = "HomeForm";
             Load += HomeForm_Load;
@@ -130,5 +141,6 @@
 
         private Button button1;
         private Button button2;
+        private Button button3;
     }
 }
