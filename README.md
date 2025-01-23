@@ -153,6 +153,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 For any queries or suggestions, feel free to contact:
 
-- Email: your_email@example.com
+- Email: nihadkarimovv@example.com
 - GitHub: [YourGitHubProfile](https://github.com/yourprofile)
 
