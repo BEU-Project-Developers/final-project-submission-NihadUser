@@ -4,8 +4,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Windows.Forms;
-using WinFormsApp2.Models; // Adjust according to your namespace
-
+using WinFormsApp2.Models;
 namespace WinFormsApp2
 {
     public partial class HomeForm : Form
@@ -20,38 +19,40 @@ namespace WinFormsApp2
             int loggedInUserId = UserSession.UserId;
             string loggedInUserName = UserSession.Name;
 
-            // Set a welcoming message with the user's name
             label1.Text = $"Welcome, {loggedInUserName}!";
             label1.Font = new Font("Arial", 16, FontStyle.Bold);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point((ClientSize.Width - label1.Width) / 2, 30); // Center the label
+            label1.Location = new Point((ClientSize.Width - label1.Width) / 2, 30);
 
-            // Load products into the FlowLayoutPanel
             LoadProducts(loggedInUserId);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             int loggedInUserId = UserSession.UserId;
-            LoadProducts(loggedInUserId); // Reload products
+            LoadProducts(loggedInUserId); 
         }
 
-        private void LoadProducts(int loggedInUserId)
+        private void LoadProducts(int loggedInUserId, string searchQuery = null)
         {
-            // Clear existing controls in FlowLayoutPanel to prevent duplication
             flowLayoutPanel1.Controls.Clear();
 
             try
             {
-                using (var context = new AppDbContext()) // Use DbContext for querying the database
+                using (var context = new AppDbContext())
                 {
-                    // Get products where DeletedAt is null
-                    var products = context.Products
-                    .Where(p => p.DeletedAt == null)
-                    .OrderByDescending(p => p.CreatedAt) // Descending order
-                    .ToList();
+                    var productsQuery = context.Products
+                        .Where(p => p.DeletedAt == null);
 
-                    // Add product cards to the FlowLayoutPanel
+                    if (!string.IsNullOrEmpty(searchQuery))
+                    {
+                        productsQuery = productsQuery.Where(p => p.Name.Contains(searchQuery));
+                    }
+
+                    var products = productsQuery
+                        .OrderByDescending(p => p.CreatedAt)
+                        .ToList();
+
                     foreach (var product in products)
                     {
                         var productCard = CreateProductCard(product, loggedInUserId);
@@ -65,19 +66,18 @@ namespace WinFormsApp2
             }
         }
 
+
         private Panel CreateProductCard(Product product, int loggedInUserId)
         {
-            // Main panel for the product card
             Panel panel = new Panel
             {
-                Size = new Size((flowLayoutPanel1.ClientSize.Width / 2) - 45, 500), // Adjust width for two cards in a row
+                Size = new Size((flowLayoutPanel1.ClientSize.Width / 2) - 45, 500), 
                 Margin = new Padding(20, 10, 20, 10),
                 Padding = new Padding(20),
                 BackColor = Color.White,
-                BorderStyle = BorderStyle.FixedSingle // Add border to each card
+                BorderStyle = BorderStyle.FixedSingle 
             };
 
-            // PictureBox for product image
             PictureBox pictureBox = new PictureBox
             {
                 Size = new Size(panel.Width - 40, 200),
@@ -86,7 +86,6 @@ namespace WinFormsApp2
                 BorderStyle = BorderStyle.None
             };
 
-            // Load the image from the product's Image property
             if (!string.IsNullOrEmpty(product.Image))
             {
                 try
@@ -109,11 +108,10 @@ namespace WinFormsApp2
                 }
                 catch
                 {
-                    pictureBox.Image = null; // Fallback if the image fails to load
+                    pictureBox.Image = null; 
                 }
             }
 
-            // Label for product name
             Label lblName = new Label
             {
                 Text = product.Name,
@@ -123,7 +121,6 @@ namespace WinFormsApp2
                 ForeColor = Color.Black
             };
 
-            // Label for price
             Label lblPrice = new Label
             {
                 Text = $"${product.Price:F2}/Day",
@@ -133,7 +130,6 @@ namespace WinFormsApp2
                 ForeColor = Color.FromArgb(0, 120, 215)
             };
 
-            // Label for location
             Label lblLocation = new Label
             {
                 Text = !string.IsNullOrEmpty(product.ProductAddress) ? product.ProductAddress : "--", // Show "--" if location is null
@@ -143,17 +139,15 @@ namespace WinFormsApp2
                 ForeColor = Color.Gray
             };
 
-            // Rating label (optional)
             Label lblRating = new Label
             {
-                Text = "★ 5.0 (120 reviews)", // You can fetch actual ratings if available
+                Text = "★ 5.0 (120 reviews)",
                 Font = new Font("Arial", 10, FontStyle.Bold),
                 Location = new Point(20, lblLocation.Bottom + 5),
                 AutoSize = true,
                 ForeColor = Color.OrangeRed
             };
 
-            // Button for viewing details
             Button btnViewDetails = new Button
             {
                 Text = "View Details",
@@ -172,10 +166,8 @@ namespace WinFormsApp2
                 detailsForm.Show();
             };
 
-            // Show Edit and Delete buttons if the user is the product owner
             if (product.UserId == loggedInUserId)
             {
-                // Edit button
                 Button btnEdit = new Button
                 {
                     Text = "Edit",
@@ -188,7 +180,6 @@ namespace WinFormsApp2
                 };
                 btnEdit.FlatAppearance.BorderSize = 0;
 
-                // Delete button
                 Button btnDelete = new Button
                 {
                     Text = "Delete",
@@ -231,7 +222,6 @@ namespace WinFormsApp2
                 panel.Controls.Add(btnDelete);
             }
 
-            // Add controls to panel
             panel.Controls.Add(pictureBox);
             panel.Controls.Add(lblName);
             panel.Controls.Add(lblPrice);
@@ -265,6 +255,11 @@ namespace WinFormsApp2
             int loggedInUserId = UserSession.UserId;
             BasketForm basket = new BasketForm(loggedInUserId);
             basket.Show();
+        }
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            string searchQuery = txtSearch.Text.Trim();
+            LoadProducts(UserSession.UserId, searchQuery);
         }
     }
 }

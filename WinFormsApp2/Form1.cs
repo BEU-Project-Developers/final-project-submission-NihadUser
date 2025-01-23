@@ -17,7 +17,7 @@ namespace WinFormsApp2
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit(); // Ensure all threads and processes are stopped
+            Application.Exit(); 
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -58,12 +58,11 @@ namespace WinFormsApp2
                 return;
             }
 
-            // Hash the entered password to compare with the stored one
             string hashedPassword = HashPassword(password);
 
             using (var context = new AppDbContext())
             {
-                // Check if user exists
+                
                 var user = context.Users.FirstOrDefault(u => u.UserName == username);
 
                 if (user == null)
@@ -72,26 +71,32 @@ namespace WinFormsApp2
                     return;
                 }
 
-                // Validate password
                 if (user.Password != hashedPassword)
                 {
                     MessageBox.Show("Invalid password.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                // Successful login
                 MessageBox.Show("Login successful!", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 UserSession.UserId = user.Id; // Store UserId
                 UserSession.UserName = user.UserName;
                 UserSession.Name = user.Name;
 
-
-                // Open Home form or the next step in your application
                 HomeForm homeForm = new HomeForm();
                 homeForm.Show();
-                //this.Close(); // Optional: hide the login form
+                //this.Close();
             }
+        }
+
+        private void textBox2_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -105,7 +105,7 @@ namespace WinFormsApp2
                 using (var context = new AppDbContext())
                 {
                     var existingBasketItem = context.Baskets
-                        .FirstOrDefault(b => b.UserId == currentUserId && b.ProductId == _productId && !b.IsCheckedOut);
+                        .FirstOrDefault(b => b.UserId == currentUserId && b.ProductId == _productId && !b.IsCheckedOut && b.DeletedAt == null);
 
                     if (existingBasketItem != null)
                     {

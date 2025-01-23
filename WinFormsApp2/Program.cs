@@ -8,7 +8,6 @@ namespace WinFormsApp2
         [STAThread]
         static void Main()
         {
-            Console.WriteLine("Main method is running");  // Check if this gets printed
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
         }

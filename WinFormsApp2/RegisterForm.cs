@@ -1,5 +1,5 @@
-﻿using Microsoft.Data.SqlClient; // You can use this if you're manually interacting with SQL Server
-using Microsoft.EntityFrameworkCore; // Entity Framework Core
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 using System.Security.Cryptography;
@@ -34,7 +34,6 @@ namespace WinFormsApp2
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            // Validate the input
             if (string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(txtUsername.Text) ||
                 string.IsNullOrEmpty(txtPassword.Text) || string.IsNullOrEmpty(txtRepeatPassword.Text))
             {
@@ -48,15 +47,12 @@ namespace WinFormsApp2
                 return;
             }
 
-            // Hash the password
             string hashedPassword = HashPassword(txtPassword.Text);
 
-            // Save the user to the database using Entity Framework
             try
             {
                 using (var context = new AppDbContext())
                 {
-                    // Check if the username already exists
                     bool usernameExists = context.Users.Any(u => u.UserName == txtUsername.Text);
                     if (usernameExists)
                     {
@@ -64,7 +60,6 @@ namespace WinFormsApp2
                         return;
                     }
 
-                    // Create the new user object
                     var newUser = new User
                     {
                         Name = txtName.Text,
@@ -72,13 +67,11 @@ namespace WinFormsApp2
                         Password = hashedPassword
                     };
 
-                    // Add the user to the database and save changes
                     context.Users.Add(newUser);
                     context.SaveChanges();
 
                     MessageBox.Show("Registration successful!");
 
-                    // After successful registration, open the login form
                     Form1 loginForm = new Form1();
                     loginForm.Show();
                     //this.Close();

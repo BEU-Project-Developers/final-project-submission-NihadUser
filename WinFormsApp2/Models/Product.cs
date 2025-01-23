@@ -9,18 +9,18 @@ namespace WinFormsApp2.Models
 
     public class Product
     {
-        public int Id { get; set; } // Primary Key
-        public string Name { get; set; } // Product Name
-        public decimal Price { get; set; } // Product Price
-        public string Description { get; set; } // Product Description
-        public DateTime CreatedAt { get; set; } = DateTime.Now; // Created Timestamp
-        public DateTime? UpdatedAt { get; set; } // Updated Timestamp (nullable)
-        public DateTime? DeletedAt { get; set; } // Soft Delete Timestamp (nullable)
-        public int UserId { get; set; } // Foreign Key to Users table (admin/user who added the product)
-        public int CategoryId { get; set; } // Foreign Key to Categories table (admin/user who added the product)   
-        public string Image { get; set; }  // This will store the image URL or path
-        public int Status { get; set; } = 1; // Product Status (default to 1)
-        public string OwnerPhone { get; set; } // Phone number of the product owner
+        public int Id { get; set; } 
+        public string Name { get; set; } 
+        public decimal Price { get; set; }
+        public string Description { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.Now; 
+        public DateTime? UpdatedAt { get; set; } 
+        public DateTime? DeletedAt { get; set; }
+        public int UserId { get; set; }
+        public int CategoryId { get; set; }
+        public string Image { get; set; }
+        public int Status { get; set; } = 1;
+        public string OwnerPhone { get; set; }
         public string ProductAddress { get; set; }
     }
 }

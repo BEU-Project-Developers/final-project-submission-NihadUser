@@ -186,7 +186,7 @@
             Controls.Add(lblRepeatPassword);
             Controls.Add(lblPassword);
             Controls.Add(lblUsername);
-            Controls.Add(lblMessage);  // Add lblMessage to controls
+            Controls.Add(lblMessage);
             Controls.Add(lblName);
             Controls.Add(lblHeading);
             Controls.Add(pictureBox);

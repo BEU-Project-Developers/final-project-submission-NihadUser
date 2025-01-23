@@ -244,12 +244,11 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.PictureBox picProductImage;
-        private System.Windows.Forms.Label lblOwnerPhone; // New Label for Owner Phone
-        private System.Windows.Forms.TextBox txtOwnerPhone; // New Textbox for Owner Phone
-        private System.Windows.Forms.Label lblOwnerAddress; // New Label for Owner Address
-        private System.Windows.Forms.TextBox txtOwnerAddress; // New Textbox for Owner Address
+        private System.Windows.Forms.Label lblOwnerPhone; 
+        private System.Windows.Forms.TextBox txtOwnerPhone;
+        private System.Windows.Forms.Label lblOwnerAddress;
+        private System.Windows.Forms.TextBox txtOwnerAddress;
 
-        // Event handler to load the image from the URL when the user enters a new URL
         private void txtImageUrl_TextChanged(object sender, EventArgs e)
         {
             try
@@ -257,16 +256,16 @@
                 string imageUrl = txtImageUrl.Text;
                 if (!string.IsNullOrEmpty(imageUrl) && Uri.IsWellFormedUriString(imageUrl, UriKind.Absolute))
                 {
-                    picProductImage.Load(imageUrl); // Load image from URL into PictureBox
+                    picProductImage.Load(imageUrl); 
                 }
                 else
                 {
-                    picProductImage.Image = null; // Clear image if the URL is not valid
+                    picProductImage.Image = null;
                 }
             }
             catch
             {
-                picProductImage.Image = null; // Handle error and clear image if any issue occurs
+                picProductImage.Image = null;
             }
         }
     }
