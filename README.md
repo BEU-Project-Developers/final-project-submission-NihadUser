@@ -154,5 +154,5 @@ This project is licensed under the [MIT License](LICENSE).
 For any queries or suggestions, feel free to contact:
 
 - Email: nihadkarimovv@example.com
-- GitHub: [NihadUser](https://github.com/yourprofile)
+- GitHub: [NihadUser](https://github.com/NihadUser)
 
